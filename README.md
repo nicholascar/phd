@@ -1,5 +1,7 @@
 # Irrigation Informatics PhD's code files
+RDF code files for PhD images.
 
+This repository contains the code files for images within Nicholas Car's PhD "Irrigation Informatics". The files are arranged in folders per chapter and named as per the figure captions in the thesis.
 
 
 ## License
