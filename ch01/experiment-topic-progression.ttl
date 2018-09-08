@@ -1,0 +1,93 @@
+@prefix : <http://nicholascar.com/phd/ch01/experiment-topic-progression#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://nicholascar.com/phd/ch01/experiment-topic-progression> .
+
+<http://nicholascar.com/phd/ch01/experiment-topic-progression> rdf:type owl:Ontology ;
+                                                                 owl:versionIRI <http://nicholascar.com/phd/ch01/experiment-topic-progression> ;
+                                                                 owl:imports <http://promsns.org/def/decprov> ,
+                                                                             <http://xmlns.com/foaf/0.1/> ;
+                                                                 dct:rights "(c) Nicholas Car 2018"@en ;
+                                                                 dc:creator "Nicholas Car" ;
+                                                                 dct:modified "2018-01-12"^^xsd:date ;
+                                                                 dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                                                 dct:creator <http://orcid.org/0000-0002-8742-7730> ;
+                                                                 rdfs:label "Experiment topic progression"@en ;
+                                                                 dct:created "2018-01-12"^^xsd:date ;
+                                                                 rdfs:comment """This RDF document contains modelling of the changing experiment topics selected for this PhD, by Nicholas Car and his supervisors.
+
+This ontology is presented in Nicholas Car's PhD thesis Chapter 1: Introduction."""@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://nicholascar.com/phd/ch01/choosing-the-phd-topic#IrrigInfoForDSS
+<http://nicholascar.com/phd/ch01/choosing-the-phd-topic#IrrigInfoForDSS> rdf:type owl:NamedIndividual ,
+                                                                                   decprov:Answer ;
+                                                                          rdfs:label "Informatics for Irrigation DSS"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#ExperimentTopicsAfterLiteratureReview
+:ExperimentTopicsAfterLiteratureReview rdf:type owl:NamedIndividual ,
+                                                prov:Collection ;
+                                       prov:used :LiteratureReviewSomeExperimentation ;
+                                       rdfs:label "Experiment Topics After Literature Review"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#FinalExperimentTopics
+:FinalExperimentTopics rdf:type owl:NamedIndividual ,
+                                prov:Collection ;
+                       prov:wasGeneratedBy :SubstantivePhdWork ;
+                       rdfs:label "Final Experiment Topics"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#InitialExperimentTopics
+:InitialExperimentTopics rdf:type owl:NamedIndividual ,
+                                  prov:Collection ;
+                         prov:used :InitialInvestigations ;
+                         rdfs:label "Initial Experiment Topics"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#InitialInvestigations
+:InitialInvestigations rdf:type owl:NamedIndividual ,
+                                prov:Activity ;
+                       prov:used <http://nicholascar.com/phd/ch01/choosing-the-phd-topic#IrrigInfoForDSS> ;
+                       rdfs:label "Initial Investigations"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#LiteratureReviewSomeExperimentation
+:LiteratureReviewSomeExperimentation rdf:type owl:NamedIndividual ,
+                                              prov:Activity ;
+                                     prov:used :InitialExperimentTopics ;
+                                     rdfs:label "Literature Review, Some Experimentation"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#PhdDocument
+:PhdDocument rdf:type owl:NamedIndividual ,
+                      prov:Entity ;
+             prov:wasGeneratedBy :PhdWriteUp ;
+             rdfs:label "PhD Document"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#PhdWriteUp
+:PhdWriteUp rdf:type owl:NamedIndividual ,
+                     prov:Activity ;
+            prov:used :FinalExperimentTopics ;
+            rdfs:label "PhD Write-Up"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#SubstantivePhdWork
+:SubstantivePhdWork rdf:type owl:NamedIndividual ,
+                             prov:Activity ;
+                    prov:used :ExperimentTopicsAfterLiteratureReview ;
+                    rdfs:label "Substantive PhD Work"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

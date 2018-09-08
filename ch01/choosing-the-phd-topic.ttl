@@ -1,0 +1,219 @@
+@prefix : <http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix decprov: <https://promsns.org/def/decprov#> .
+@base <http:://nicholascar.com/phd/ch01/choosing-the-phd-topic> .
+
+<http:://nicholascar.com/phd/ch01/choosing-the-phd-topic> rdf:type owl:Ontology ;
+                                                           owl:versionIRI <http:://nicholascar.com/phd/ch01/choosing-the-phd-topic> ;
+                                                           owl:imports <http://promsns.org/def/decprov> ;
+                                                           dct:modified "2018-04-10"^^xsd:date ;
+                                                           dct:rights "(c) Nicholas Car 2018"@en ;
+                                                           rdfs:label "Choosing the PhD Topic"@en ;
+                                                           dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                                           dct:created "2018-01-11"^^xsd:date ;
+                                                           dct:creator <http://orcid.org/0000-0002-8742-7730> ;
+                                                           dct:creator "Nicholas Car" ;
+                                                           rdfs:comment """This OWL document contains modelling of the decision, by Nicholas Car's supervisors, to choose a PhD topic for him.
+
+This ontology is presented in Nicholas Car's PhD thesis Chapter 1: Introduction."""@en ;
+                                                           <http://purl.org/dc/elements/1.1/creator> "Nicholas Car"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/ns/prov#hadActivity
+prov:hadActivity rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#qualifiedStart
+prov:qualifiedStart rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#used
+prov:used rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+prov:wasAttributedTo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+prov:wasDerivedFrom rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasStartedBy
+prov:wasStartedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/member
+foaf:member rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/Group
+foaf:Group rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+###  https://promsns.org/def/decprov#Answer
+decprov:Answer rdf:type owl:Class .
+
+
+###  https://promsns.org/def/decprov#DecisionMaking
+decprov:DecisionMaking rdf:type owl:Class .
+
+
+###  https://promsns.org/def/decprov#OptionSelection
+decprov:OptionSelection rdf:type owl:Class .
+
+
+###  https://promsns.org/def/decprov#Question
+decprov:Question rdf:type owl:Class .
+
+
+###  https://promsns.org/def/decprov#Requirement
+decprov:Requirement rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#ChooseDSS
+:ChooseDSS rdf:type owl:NamedIndividual ,
+                    decprov:OptionSelection ;
+           rdfs:comment "In this OptionSelection, the PhD Supervisors decided to select studying about DSS due to both the Requirements for it - it being both Supervisable and Implementable - being able to be met and no other OptionSelections being able to satisfy their Requirements."@en ;
+           rdfs:label "Choose studying about DSS"@en ;
+           prov:qualifiedStart [ rdf:type prov:Start ;
+                                 prov:hadActivity :Decide
+                               ] ;
+           prov:used :DSSImplementable ,
+                     :DSSSupervisable .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#ChooseSensor
+:ChooseSensor rdf:type owl:NamedIndividual ,
+                       decprov:OptionSelection ;
+              rdfs:comment "This OptionSelection did not produce athe final decision - to study sensor networks - as the PhD supervisors thought that while a topic was supervisable (as per one Requirement) it was unlikely that it would be Implementable within the lifetime of the PhD and the CRC for Irrigation Futures, given CSIRO & University staff capacity."@en ;
+              rdfs:label "Choose studying about Sensor Networks"@en ;
+              prov:qualifiedStart [ rdf:type prov:Start ;
+                                    prov:hadActivity :Decide
+                                  ] ;
+              prov:used :SNImplementable ,
+                        :SNSupervisable .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#DSSImplementable
+:DSSImplementable rdf:type owl:NamedIndividual ,
+                           decprov:Requirement ;
+                  rdfs:label "Implementable for DSS"@en .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#DSSSupervisable
+:DSSSupervisable rdf:type owl:NamedIndividual ,
+                          decprov:Requirement ;
+                 rdfs:label "Supervisable for DSS"@en .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#Decide
+:Decide rdf:type owl:NamedIndividual ,
+                 decprov:DecisionMaking ;
+        rdfs:comment "This was the main decision making activity in which the PhD Supervisors decided the PhD topic"@en ;
+        rdfs:label "Decide about PhD topic"@en ;
+        prov:wasStartedBy :What .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#DssIsImplementable
+:DssIsImplementable rdf:type owl:NamedIndividual ,
+                             prov:Entity ;
+                    prov:wasDerivedFrom :DSSImplementable ;
+                    prov:wasGeneratedBy :ChooseDSS .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#DssIsSupervisable
+:DssIsSupervisable rdf:type owl:NamedIndividual ,
+                            prov:Entity ;
+                   prov:wasDerivedFrom :DSSSupervisable ;
+                   prov:wasGeneratedBy :ChooseDSS .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#EvanChristen
+:EvanChristen rdf:type owl:NamedIndividual ,
+                       foaf:Person ;
+              rdfs:label "Evan Christen"@en ;
+              foaf:member :PhdSupervisors .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#GrahamMoore
+:GrahamMoore rdf:type owl:NamedIndividual ,
+                      foaf:Person ;
+             rdfs:label "Graham Moore"@en ;
+             foaf:member :PhdSupervisors .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#IrrigInfoForDSS
+:IrrigInfoForDSS rdf:type owl:NamedIndividual ,
+                          decprov:Answer ;
+                 rdfs:label "Informatics for Irrigation DSS"@en ;
+                 prov:wasAttributedTo :PhdSupervisors ;
+                 prov:wasDerivedFrom :What ;
+                 prov:wasGeneratedBy :ChooseDSS .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#IvanMareels
+:IvanMareels rdf:type owl:NamedIndividual ,
+                      foaf:Person ;
+             rdfs:label "Ivan Mareels"@en ;
+             foaf:member :PhdSupervisors .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#PhdSupervisors
+:PhdSupervisors rdf:type owl:NamedIndividual ,
+                         foaf:Group .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#SNImplementable
+:SNImplementable rdf:type owl:NamedIndividual ,
+                          decprov:Requirement ;
+                 rdfs:label "Implementable for Sensor Networks"@en .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#SNSupervisable
+:SNSupervisable rdf:type owl:NamedIndividual ,
+                         decprov:Requirement ;
+                rdfs:label "Supervisable for Sensor Networks"@en .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#SnIsSupervisable
+:SnIsSupervisable rdf:type owl:NamedIndividual ,
+                           prov:Entity ;
+                  prov:wasDerivedFrom :SNSupervisable ;
+                  prov:wasGeneratedBy :ChooseSensor .
+
+
+###  http:://nicholascar.com/phd/ch01/choosing-the-phd-topic#What
+:What rdf:type owl:NamedIndividual ,
+               decprov:Question ;
+      rdfs:label "What should this PhD be about?"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

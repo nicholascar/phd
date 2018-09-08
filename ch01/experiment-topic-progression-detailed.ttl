@@ -1,0 +1,282 @@
+@prefix : <http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed> .
+
+<http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed> rdf:type owl:Ontology ;
+                                                                         owl:versionIRI <http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed> ;
+                                                                         owl:imports <http://promsns.org/def/decprov> ,
+                                                                                     <http://xmlns.com/foaf/0.1/> ;
+                                                                         dct:modified "2018-04-10"^^xsd:date ;
+                                                                         dct:rights "(c) Nicholas Car 2018"@en ;
+                                                                         dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                                                         dct:created "2018-01-12"^^xsd:date ;
+                                                                         dct:creator <http://orcid.org/0000-0002-8742-7730> ;
+                                                                         dc:creator "Nicholas Car" ;
+                                                                         rdfs:comment """This RDF document contains detailed modelling of the changing experiment topics selected for this PhD, by Nicholas Car and his supervisors. It is a more detailed version of the RDF document <http://nicholascar.com/phd/ch01/experiment-topic-progression>.
+
+This ontology is presented in Nicholas Car's PhD thesis Chapter 1: Introduction."""@en ;
+                                                                         rdfs:label "Experiment topic progression - detailed"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/ns/prov#hadMember
+prov:hadMember rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+prov:wasDerivedFrom rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasInfluencedBy
+prov:wasInfluencedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasInvalidatedBy
+prov:wasInvalidatedBy rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://promsns.org/def/decprov#DecisionMaking
+decprov:DecisionMaking rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#ExperimentTopicsAfterLiteratureReview
+<http://nicholascar.com/phd/ch01/experiment-topic-progression#ExperimentTopicsAfterLiteratureReview> rdf:type owl:NamedIndividual ,
+                                                                                                              prov:Collection ;
+                                                                                                     rdfs:label "Experiment Topics After Literature Review"@en ;
+                                                                                                     prov:hadMember :BetterDecisionTheoryUse ,
+                                                                                                                                           :BetterIrrigationScienceUse ,
+                                                                                                                                           :Customisation ,
+                                                                                                                                           :NewDssTools ,
+                                                                                                                                           :UserDefinedData .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#FinalExperimentTopics
+<http://nicholascar.com/phd/ch01/experiment-topic-progression#FinalExperimentTopics> rdf:type owl:NamedIndividual ,
+                                                                                              prov:Collection ;
+                                                                                     rdfs:label "Final Experiment Topics"@en ;
+                                                                                     prov:hadMember :BetterDecisionTheoryUse ,
+                                                                                                                           :Customisation2 ,
+                                                                                                                           :DssAdoptionAnalysis ,
+                                                                                                                           :EmpiricalDss ,
+                                                                                                                           :NewDssTools .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#InitialExperimentTopics
+<http://nicholascar.com/phd/ch01/experiment-topic-progression#InitialExperimentTopics> rdf:type owl:NamedIndividual ,
+                                                                                                prov:Collection ;
+                                                                                       rdfs:label "Initial Experiment Topics"@en ;
+                                                                                       prov:hadMember :EmpiricalDss ,
+                                                                                                                             :FacilitativeVDirective ,
+                                                                                                                             :InteroperabilityAndDiscovery ,
+                                                                                                                             :UserDefinedInput ,
+                                                                                                                             :UserDefinedRules .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression#PhdDocument
+<http://nicholascar.com/phd/ch01/experiment-topic-progression#PhdDocument> rdf:type owl:NamedIndividual ,
+                                                                                    prov:Collection ;
+                                                                           rdfs:label "PhD Document"@en ;
+                                                                           prov:hadMember :Ch3 ,
+                                                                                                                 :Ch4 ,
+                                                                                                                 :Ch5 ,
+                                                                                                                 :Ch6 ,
+                                                                                                                 :Ch7 ,
+                                                                                                                 :Ch8 .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#BetterDecisionTheoryUse
+:BetterDecisionTheoryUse rdf:type owl:NamedIndividual ,
+                                  prov:Entity ;
+                         rdfs:label "Better Decision Theory Use"@en ;
+                         prov:wasDerivedFrom :FacilitativeVDirective ;
+                         prov:wasGeneratedBy :DecidedToInvestigateDssOrigins .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#BetterIrrigationScienceUse
+:BetterIrrigationScienceUse rdf:type owl:NamedIndividual ,
+                                     prov:Entity ;
+                            rdfs:label "Better Irrigation Science Use"@en ;
+                            prov:wasGeneratedBy :DecidedToIncreaseNaturalSciencesWork ;
+                            prov:wasInvalidatedBy :DecidedCandidateNotSkilledInTopic .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Ch3
+:Ch3 rdf:type owl:NamedIndividual ,
+              prov:Entity ;
+     rdfs:label "Chapter 3"@en ;
+     prov:wasInfluencedBy :NewDssTools .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Ch4
+:Ch4 rdf:type owl:NamedIndividual ,
+              prov:Entity ;
+     rdfs:label "Chapter 4"@en ;
+     prov:wasInfluencedBy :NewDssTools .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Ch5
+:Ch5 rdf:type owl:NamedIndividual ,
+              prov:Entity ;
+     rdfs:label "Chapter 5"@en ;
+     prov:wasInfluencedBy :DssAdoptionAnalysis .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Ch6
+:Ch6 rdf:type owl:NamedIndividual ,
+              prov:Entity ;
+     rdfs:label "Chapter 6"@en ;
+     prov:wasInfluencedBy :Customisation2 ,
+                                                 :NewDssTools ,
+                                                 :UserDefinedData .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Ch7
+:Ch7 rdf:type owl:NamedIndividual ,
+              prov:Entity ;
+     rdfs:label "Chapter 7"@en ;
+     prov:wasInfluencedBy :EmpiricalDss .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Ch8
+:Ch8 rdf:type owl:NamedIndividual ,
+              prov:Entity ;
+     rdfs:label "Chapter 8"@en ;
+     prov:wasInfluencedBy :BetterDecisionTheoryUse ,
+                                                 :Customisation2 .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Customisation
+:Customisation rdf:type owl:NamedIndividual ,
+                        prov:Entity ;
+               rdfs:label "Customisation"@en ;
+               prov:wasDerivedFrom :UserDefinedInput ,
+                                                          :UserDefinedRules .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#Customisation2
+:Customisation2 rdf:type owl:NamedIndividual ,
+                         prov:Entity ;
+                rdfs:label "Customisation 2"@en ;
+                prov:wasDerivedFrom :UserDefinedData ;
+                prov:wasGeneratedBy :DecidedCandidateNotSkilledInTopic ;
+                prov:wasRevisionOf :Customisation .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecidedCandidateNotSkilledInTopic
+:DecidedCandidateNotSkilledInTopic rdf:type owl:NamedIndividual ,
+                                            decprov:DecisionMaking ;
+                                   rdfs:label "Decided Candidate Not Skilled In Topic"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecidedGatheringResponsesOnerous
+:DecidedGatheringResponsesOnerous rdf:type owl:NamedIndividual ,
+                                           decprov:DecisionMaking ;
+                                  rdfs:label "Decided Gathering Responses Onerous"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecidedToDirectlyTestNewTech
+:DecidedToDirectlyTestNewTech rdf:type owl:NamedIndividual ,
+                                       decprov:DecisionMaking ;
+                              rdfs:label "Decided To Directly Test New Tech"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecidedToIncreaseNaturalSciencesWork
+:DecidedToIncreaseNaturalSciencesWork rdf:type owl:NamedIndividual ,
+                                               decprov:DecisionMaking ;
+                                      rdfs:label "Decided To Increase Natural Sciences Work"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecidedToInvestigateDssOrigins
+:DecidedToInvestigateDssOrigins rdf:type owl:NamedIndividual ,
+                                         decprov:DecisionMaking ;
+                                rdfs:label "Decided To Investigate DSS Origins"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecidedToRelateLessonsFromIrriSatsms
+:DecidedToRelateLessonsFromIrriSatsms rdf:type owl:NamedIndividual ,
+                                               decprov:DecisionMaking ;
+                                      prov:wasInformedBy :DecidedCandidateNotSkilledInTopic ;
+                                      rdfs:label "Decided To Relate Lessons From IrriSatSMS"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DecisionTheoryUse
+:DecisionTheoryUse rdf:type owl:NamedIndividual ,
+                            prov:Entity ;
+                   rdfs:label "Decision Theory Use"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#DssAdoptionAnalysis
+:DssAdoptionAnalysis rdf:type owl:NamedIndividual ,
+                              prov:Entity ;
+                     rdfs:label "DSS Adoption Analysis"@en ;
+                     prov:wasGeneratedBy :DecidedToRelateLessonsFromIrriSatsms .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#EmpiricalDss
+:EmpiricalDss rdf:type owl:NamedIndividual ,
+                       prov:Entity ;
+              rdfs:label "Empirical DSS"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#FacilitativeVDirective
+:FacilitativeVDirective rdf:type owl:NamedIndividual ,
+                                 prov:Entity ;
+                        rdfs:label "Facilitative v. Directive"@en ;
+                        prov:wasInvalidatedBy :DecidedGatheringResponsesOnerous .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#InteroperabilityAndDiscovery
+:InteroperabilityAndDiscovery rdf:type owl:NamedIndividual ,
+                                       prov:Entity ;
+                              rdfs:label "Interoperability & Discovery"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#NewDssTools
+:NewDssTools rdf:type owl:NamedIndividual ,
+                      prov:Entity ;
+             rdfs:label "New DSS Tools"@en ;
+             prov:wasGeneratedBy :DecidedToDirectlyTestNewTech .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#UserDefinedData
+:UserDefinedData rdf:type owl:NamedIndividual ,
+                          prov:Entity ;
+                 rdfs:label "User-Defined Data"@en ;
+                 prov:wasDerivedFrom :InteroperabilityAndDiscovery ,
+                                                            :UserDefinedInput .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#UserDefinedInput
+:UserDefinedInput rdf:type owl:NamedIndividual ,
+                           prov:Entity ;
+                  rdfs:label "User-Defined Input"@en .
+
+
+###  http://nicholascar.com/phd/ch01/experiment-topic-progression-detailed#UserDefinedRules
+:UserDefinedRules rdf:type owl:NamedIndividual ,
+                           prov:Entity ;
+                  rdfs:label "User-Defined Rules"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
